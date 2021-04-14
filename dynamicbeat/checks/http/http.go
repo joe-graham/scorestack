@@ -9,6 +9,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/http/cookiejar"
+	"net/url"
 	"regexp"
 	"strconv"
 	"strings"
@@ -17,6 +18,7 @@ import (
 
 	"github.com/elastic/beats/v7/libbeat/logp"
 	"github.com/scorestack/scorestack/dynamicbeat/checks/schema"
+	"golang.org/x/net/proxy"
 )
 
 // The Definition configures the behavior of an HTTP check.
@@ -24,6 +26,7 @@ type Definition struct {
 	Config               schema.CheckConfig // generic metadata about the check
 	Verify               string             `optiontype:"optional"` // whether HTTPS certs should be validated
 	ReportMatchedContent string             `optiontype:"optional"` // whether the matched content should be returned in the CheckResult
+	ProxyURL             string             `optiontype:"optional"` // URL used to route requests through an HTTP, HTTPS, or SOCKS5 proxy
 	Requests             []*Request         `optiontype:"list"`     // a list of requests to make
 }
 
@@ -52,6 +55,31 @@ func (d *Definition) Run(ctx context.Context) schema.CheckResult {
 	verify, _ := strconv.ParseBool(d.Verify)
 	reportMatchedContent, _ := strconv.ParseBool(d.ReportMatchedContent)
 
+	// Define transport in case new properties are added to it
+
+	transport := &http.Transport{
+		IdleConnTimeout: 10 * time.Second,
+		TLSClientConfig: &tls.Config{
+			InsecureSkipVerify: !verify,
+		},
+	}
+
+	if len(d.ProxyURL) > 0 {
+		// Parse proxy URL
+		proxyURL, err := url.Parse(d.ProxyURL)
+		if err != nil {
+			logp.Info("Error parsing proxy URL: %s", err)
+			return result
+		}
+
+		dial, err := proxy.FromURL(proxyURL, proxy.Direct)
+		if err != nil {
+			logp.Info("Error creating dialer: %s", err)
+			return result
+		}
+		transport.Dial = dial.Dial
+	}
+
 	// Configure HTTP client
 	cookieJar, err := cookiejar.New(nil)
 	if err != nil {
@@ -61,13 +89,8 @@ func (d *Definition) Run(ctx context.Context) schema.CheckResult {
 	// TODO: change http.Client.Timeout to be relative to the parent context's
 	// timeout
 	client := &http.Client{
-		Jar: cookieJar,
-		Transport: &http.Transport{
-			IdleConnTimeout: 10 * time.Second,
-			TLSClientConfig: &tls.Config{
-				InsecureSkipVerify: !verify,
-			},
-		},
+		Jar:       cookieJar,
+		Transport: transport,
 	}
 
 	// Save match strings
