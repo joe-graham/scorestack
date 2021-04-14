@@ -1,0 +1,32 @@
+{
+    "id": "https-tor",
+    "name": "Tor",
+    "type": "http",
+    "group": "{TEAM}",
+    "score_weight": 1,
+    "definition": {
+        "proxyURL": "{{.Proxy}}",
+        "requests": [
+            {
+                "host": "{{.Host}}",
+                "path": "/",
+                "https": true,
+                "port": 443,
+                "method": "GET",
+                "matchcode": true,
+                "matchcontent": true,
+                "contentregex": "<html lang=\"en\" id=\"facebook\" class=\"no_js\">"
+            },
+            {
+                "host": "{{.Host}}",
+                "path": "/",
+                "https": true,
+                "port": 443,
+                "code": 200,
+                "method": "GET",
+                "matchcode": true,
+                "matchcontent": false
+            }
+        ]
+    }
+} 

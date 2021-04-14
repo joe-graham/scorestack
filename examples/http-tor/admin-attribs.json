@@ -1,0 +1,4 @@
+{
+    "Host": "facebookcorewwwi.onion",
+    "Proxy": "socks5://localhost:9050"
+}
