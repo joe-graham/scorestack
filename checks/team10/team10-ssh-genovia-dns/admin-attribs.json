@@ -1,0 +1,8 @@
+{
+    "Host": "172.17.10.2",
+    "CaIP": "172.17.10.7",
+    "Username": "centos",
+    "Cmd": "id",
+    "ContentRegex": "centos",
+    "MatchContent": "true"
+}

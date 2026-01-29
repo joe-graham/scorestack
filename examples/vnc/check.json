@@ -1,0 +1,12 @@
+{
+    "id": "vnc",
+    "name": "VNC",
+    "type": "vnc",
+    "group": "example",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Port": "{{.Port}}",
+        "Password": "{{.Password}}"
+    }
+}

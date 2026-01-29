@@ -1,0 +1,7 @@
+{
+    "Host": "172.17.70.12",
+    "Username": "emalik",
+    "Cmd": "id",
+    "ContentRegex": "emalik",
+    "MatchContent": "true"
+}

@@ -1,0 +1,15 @@
+{
+    "id": "ssh-gilead-corp-wsit",
+    "name": "SSH Gilead (Corp) WS-IT",
+    "type": "ssh_domain",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Cmd": "{{.Cmd}}",
+        "ContentRegex": "{{.ContentRegex}}",
+        "MatchContent": "{{.MatchContent}}"
+    }
+}

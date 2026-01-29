@@ -1,0 +1,10 @@
+{
+    "id": "icmp",
+    "name": "ICMP",
+    "type": "icmp",
+    "group": "example",
+    "score_weight": 1,
+    "definition": {
+        "host": "{{.Host}}"
+    }
+}

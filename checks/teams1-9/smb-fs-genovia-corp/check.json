@@ -1,0 +1,15 @@
+{
+    "id": "smb-fs-genovia-corp",
+    "name": "SMB - FS - Genovia - Corp",
+    "type": "smb",
+    "group": "{TEAM}",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Share": "{{.Share}}",
+        "Domain": "{{.Domain}}",
+        "File": "{{.File}}"
+    }
+}

@@ -1,0 +1,39 @@
+dynamicbeat:
+  # Defines how often checks will be executed
+  period: 180s
+
+  # Defines how often check definitions and attributes will be read from elasticsearch
+  update_period: 1m
+
+  # Where check definitions will be read from
+  check_source:
+    # List of Elasticsearch hosts to query
+    hosts: ["https://elasticsearch4.newscrier.org:9200"]
+    
+    # Credentials used by this beat to read check definitions
+    username: dynamicbeat
+    password: "QU*o%qyJX&Ro6w4CweX!J!E*"
+
+    # Whether to verify SSL/TLS certificates, if HTTPS is used
+    # CHANGE FOR COMPETITION
+    #verify_certs: true
+    verify_certs: false
+
+    # The index that check definitions will be read from
+    index: checkdef
+
+output.logstash:
+  # The Logstash hosts
+  hosts: ["logstash.newscrier.org:5454"]
+
+  # Enable SSL.
+  ssl.enabled: true
+
+  # List of root certificates for HTTPS server verifications
+  ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
+
+  # Certificate for SSL client authentication
+  ssl.certificate: "/etc/pki/client/cert.pem"
+
+  # Client Certificate Key
+  ssl.key: "/etc/pki/client/cert.key"

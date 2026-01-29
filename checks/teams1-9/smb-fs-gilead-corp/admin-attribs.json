@@ -1,0 +1,7 @@
+{
+    "Host": "172.17.6${TEAM_NUM}.3",
+    "Username": "Administrator",
+    "Share": "invoices",
+    "Domain": "FS",
+    "File": "PaidInvoices/2021-01/Bluth_Jan_2021.png"
+}

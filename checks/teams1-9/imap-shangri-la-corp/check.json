@@ -1,0 +1,14 @@
+{
+    "id": "imap-shangri-la-corp",
+    "name": "IMAP - Shangri-La - Corp",
+    "type": "imap",
+    "group": "{TEAM}",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Port": "{{.Port}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Encrypted": "{{.Encrypted}}"
+    }
+}

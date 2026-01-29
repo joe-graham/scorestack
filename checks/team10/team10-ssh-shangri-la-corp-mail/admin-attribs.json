@@ -1,0 +1,8 @@
+{
+    "Host": "172.17.50.2",
+    "CaIP": "172.17.10.7",
+    "Username": "fedora",
+    "Cmd": "id",
+    "ContentRegex": "fedora",
+    "MatchContent": "true"
+}

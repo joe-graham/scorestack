@@ -1,0 +1,13 @@
+{
+    "id": "dns-corp",
+    "name": "DNS - Newscrier Corp",
+    "type": "dns",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "Server": "{{.Server}}",
+        "Port": "{{.Port}}",
+        "Fqdn": "{{.Fqdn}}",
+        "ExpectedIP": "{{.ExpectedIP}}"
+    }
+}

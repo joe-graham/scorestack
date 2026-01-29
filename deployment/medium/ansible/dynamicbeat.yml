@@ -1,0 +1,67 @@
+- name: Setup Dynamicbeat hosts
+  hosts: dynamicbeat
+  become: yes
+  tasks:
+    - name: Allow unprivileged ping via UDP
+      sysctl:
+        name: net.ipv4.ping_group_range
+        sysctl_set: yes
+        value: "0   2147483647"
+
+    - name: Install unzip package
+      package:
+        name: unzip
+        state: present
+
+    - name: Create dynamicbeat dir
+      file:
+        path: /opt/dynamicbeat
+        state: directory
+
+    - name: Copy and decompress dynamicbeat zip
+      unarchive:
+        src: files/dynamicbeat-v0.6.2.zip
+        dest: /opt/dynamicbeat
+
+    - name: Copy config file to /opt/dynamicbeat
+      copy:
+        src: configs/dynamicbeat.yml
+        dest: /opt/dynamicbeat/dynamicbeat.yml
+    
+    - name: Copy systemd service file
+      copy:
+        src: configs/dynamicbeat.service
+        dest: /etc/systemd/system/dynamicbeat.service
+
+    - name: Create root cert dir
+      file:
+        path: /etc/pki/root
+        state: directory
+
+    - name: Create client cert dir
+      file:
+        path: /etc/pki/client
+        state: directory
+
+    - name: Copy CA cert
+      copy:
+        src: certificates/ca/ca.crt
+        dest: /etc/pki/root/ca.pem
+
+    - name: Copy dynamicbeat cert
+      copy:
+        src: certificates/dynamicbeat/dynamicbeat.crt
+        dest: /etc/pki/client/cert.pem
+
+    - name: Copy dynamicbeat key
+      copy:
+        src: certificates/dynamicbeat/dynamicbeat.key
+        dest: /etc/pki/client/cert.key
+        mode: 0600
+
+    - name: Start dynamicbeat service
+      systemd:
+        name: dynamicbeat
+        state: started
+        daemon_reload: yes
+        enabled: yes

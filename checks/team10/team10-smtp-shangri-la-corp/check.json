@@ -1,0 +1,17 @@
+{
+    "id": "smtp-shangri-la-corp",
+    "name": "SMTP - Shangri-La - Corp",
+    "type": "smtp",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Sender": "{{.Sender}}",
+        "Reciever": "{{.Reciever}}",
+        "Body": "{{.Body}}",
+        "Encrypted": "{{.Encrypted}}",
+        "Port": "{{.Port}}"
+    }
+}

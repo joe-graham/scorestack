@@ -1,0 +1,14 @@
+{
+    "id": "ldap-dc-corp",
+    "name": "LDAP - DC - Newscrier Corp",
+    "type": "ldap",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "User": "{{.User}}",
+        "Password": "{{.Password}}",
+        "Fqdn": "{{.Fqdn}}",
+        "Port": "{{.Port}}",
+        "Ldaps": "{{.Ldaps}}"
+    }
+}

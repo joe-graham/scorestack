@@ -1,0 +1,16 @@
+{
+    "id": "rdp-fs-shangri-la-corp",
+    "name": "RDP - FS - Shangri-La - Corp",
+    "type": "tcp",
+    "group": "{TEAM}",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Port": "{{.Port}}",
+        "Input": "{{.Input}}",
+        "MatchContent": "{{.MatchContent}}",
+        "ReportMatchedContent": "{{.ReportMatchedContent}}",
+        "ContentRegex": "{{.Encrypted}}",
+        "ContentBase64": "{{.MatchContent}}"
+    }
+}

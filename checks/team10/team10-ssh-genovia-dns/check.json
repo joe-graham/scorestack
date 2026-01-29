@@ -1,0 +1,20 @@
+{
+    "id": "ssh-genovia-dns",
+    "name": "SSH Genovia DNS",
+    "type": "ssh",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Requests": [
+            {
+                "Username": "{{.Username}}"
+            }
+        ],
+        "CaIP": "{{.CaIP}}",
+        "SSHCertificateAuthorityPassword": "{{.SSHCertificateAuthorityPassword}}",
+        "Cmd": "{{.Cmd}}",
+        "ContentRegex": "{{.ContentRegex}}",
+        "MatchContent": "{{.MatchContent}}"
+    }
+}

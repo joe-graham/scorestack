@@ -1,0 +1,8 @@
+{
+    "Host": "172.17.10.5",
+    "CaIP": "172.17.10.7",
+    "Username": "ubuntu",
+    "Cmd": "id",
+    "ContentRegex": "ubuntu",
+    "MatchContent": "true"
+}

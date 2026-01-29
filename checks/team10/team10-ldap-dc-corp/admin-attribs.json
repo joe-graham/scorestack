@@ -1,0 +1,6 @@
+{
+    "User": "administrator@ad.blue10.newscrier.org",
+    "Fqdn": "172.17.10.3",
+    "Port": "389",
+    "Ldaps": "false"
+}

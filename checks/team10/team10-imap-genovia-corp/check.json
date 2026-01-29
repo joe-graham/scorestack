@@ -1,0 +1,14 @@
+{
+    "id": "imap-genovia-corp",
+    "name": "IMAP - Genovia - Corp",
+    "type": "imap",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Port": "{{.Port}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Encrypted": "{{.Encrypted}}"
+    }
+}

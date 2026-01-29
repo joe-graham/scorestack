@@ -1,0 +1,12 @@
+{
+    "id": "ssh-certificate-authority",
+    "name": "SSH Certificate Authority",
+    "type": "ssh_ca",
+    "group": "{TEAM}",
+    "score_weight": 1,
+    "definition": {
+        "Username": "{{.Username}}",
+        "CaIP": "{{.CaIP}}",
+        "SSHCertificateAuthorityPassword": "{{.SSHCertificateAuthorityPassword}}"
+    }
+}

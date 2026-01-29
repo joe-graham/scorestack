@@ -1,0 +1,13 @@
+{
+    "id": "dns",
+    "name": "DNS",
+    "type": "dns",
+    "group": "example",
+    "score_weight": 1,
+    "definition": {
+        "Server": "{{.Server}}",
+        "Port": "{{.Port}}",
+        "Fqdn": "{{.Fqdn}}",
+        "ExpectedIP": "{{.ExpectedIP}}"
+    }
+}

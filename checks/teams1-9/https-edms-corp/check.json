@@ -1,0 +1,21 @@
+{
+    "id": "https-edms-corp",
+    "name": "HTTPS - EDMS - Newscrier Corp",
+    "type": "http",
+    "group": "{TEAM}",
+    "score_weight": 1,
+    "definition": {
+        "requests": [
+            {
+                "host": "{{.Host}}",
+                "path": "/",
+                "https": true,
+                "port": 443,
+                "method": "GET",
+                "matchcode": true,
+                "matchcontent": true,
+                "contentregex": "Detect if we are inside of an AJAX content container"
+            }
+        ]
+    }
+}

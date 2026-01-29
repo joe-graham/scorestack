@@ -1,0 +1,17 @@
+{
+    "id": "smtp-gilead-corp",
+    "name": "SMTP - Gilead - Corp",
+    "type": "smtp",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Sender": "{{.Sender}}",
+        "Reciever": "{{.Reciever}}",
+        "Body": "{{.Body}}",
+        "Encrypted": "{{.Encrypted}}",
+        "Port": "{{.Port}}"
+    }
+}

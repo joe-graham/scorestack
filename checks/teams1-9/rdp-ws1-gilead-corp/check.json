@@ -1,0 +1,16 @@
+{
+    "id": "rdp-ws1-gilead-corp",
+    "name": "RDP - WS1 - Gilead - Corp",
+    "type": "tcp",
+    "group": "{TEAM}",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Port": "{{.Port}}",
+        "Input": "{{.Input}}",
+        "MatchContent": "{{.MatchContent}}",
+        "ReportMatchedContent": "{{.ReportMatchedContent}}",
+        "ContentRegex": "{{.Encrypted}}",
+        "ContentBase64": "{{.MatchContent}}"
+    }
+}

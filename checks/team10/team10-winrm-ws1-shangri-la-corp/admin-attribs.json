@@ -1,0 +1,9 @@
+{
+    "Host": "172.17.50.20",
+    "Port": "5985",
+    "Username": "netsrv",
+    "Cmd": "whoami",
+    "ContentRegex": ".*",
+    "Encrypted": "false",
+    "MatchContent": "false"
+}

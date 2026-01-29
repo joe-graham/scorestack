@@ -1,0 +1,9 @@
+{
+    "Host": "172.17.6${TEAM_NUM}.2",
+    "Username": "Administrator@blue${TEAM_NUM}.newscrier.org",
+    "Sender": "Administrator@blue${TEAM_NUM}.newscrier.org",
+    "Reciever": "amoses@blue${TEAM_NUM}.newscrier.org",
+    "Body": "Hello from Scorestack",
+    "Port": "25",
+    "Encrypted": "false"
+}

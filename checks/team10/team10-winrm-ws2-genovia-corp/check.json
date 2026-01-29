@@ -1,0 +1,17 @@
+{
+    "id": "winrm-ws2-genovia-corp",
+    "name": "WinRM - WS2 - Genovia - Corp",
+    "type": "winrm",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Port": "{{.Port}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Cmd": "{{.Cmd}}",
+        "Encrypted": "{{.Encrypted}}",
+        "MatchContent": "{{.MatchContent}}",
+        "ContentRegex": "{{.ContentRegex}}"
+    }
+}

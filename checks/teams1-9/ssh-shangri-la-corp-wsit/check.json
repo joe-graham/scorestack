@@ -1,0 +1,15 @@
+{
+    "id": "ssh-shangri-la-corp-wsit",
+    "name": "SSH Shangri-La (Corp) WS-IT",
+    "type": "ssh_domain",
+    "group": "{TEAM}",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Cmd": "{{.Cmd}}",
+        "ContentRegex": "{{.ContentRegex}}",
+        "MatchContent": "{{.MatchContent}}"
+    }
+}

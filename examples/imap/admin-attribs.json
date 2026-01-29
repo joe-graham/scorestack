@@ -1,0 +1,6 @@
+{
+    "Host": "localhost",
+    "Port": "143",
+    "Username": "admin",
+    "Encrypted": "false"
+}

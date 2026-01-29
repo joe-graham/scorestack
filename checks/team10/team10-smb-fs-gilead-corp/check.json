@@ -1,0 +1,15 @@
+{
+    "id": "smb-fs-gilead-corp",
+    "name": "SMB - FS - Gilead - Corp",
+    "type": "smb",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "Host": "{{.Host}}",
+        "Username": "{{.Username}}",
+        "Password": "{{.Password}}",
+        "Share": "{{.Share}}",
+        "Domain": "{{.Domain}}",
+        "File": "{{.File}}"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "Server": "172.17.10.2",
+    "Port": "53",
+    "Fqdn": "ca.blue10.newscrier.org",
+    "ExpectedIP": "172.17.10.7"
+}

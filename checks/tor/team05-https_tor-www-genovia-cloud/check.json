@@ -1,0 +1,23 @@
+{
+    "id": "https_tor-www-genovia-cloud-team05",
+    "name": "HTTPS Tor - WWW - Genovia Cloud",
+    "type": "http",
+    "group": "team05",
+    "score_weight": 1,
+    "definition": {
+        "proxyURL": "{{.Proxy}}",
+        "timeout": "30",
+        "requests": [
+            {
+                "host": "{{.Host}}",
+                "path": "/",
+                "https": false,
+                "port": 80,
+                "method": "GET",
+                "matchcode": true,
+                "matchcontent": true,
+                "contentregex": "The President of Gilead said her administration is considering a ban on social media app Glow."
+            }
+        ]
+    }
+}

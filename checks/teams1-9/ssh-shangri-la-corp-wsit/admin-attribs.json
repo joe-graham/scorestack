@@ -1,0 +1,7 @@
+{
+    "Host": "172.17.4${TEAM_NUM}.12",
+    "Username": "kdanvers",
+    "Cmd": "id",
+    "ContentRegex": "kdanvers",
+    "MatchContent": "true"
+}

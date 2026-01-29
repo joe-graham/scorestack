@@ -1,0 +1,21 @@
+{
+    "id": "https-www-genovia-cloud",
+    "name": "HTTPS - WWW - Genovia - Cloud",
+    "type": "http",
+    "group": "team10",
+    "score_weight": 1,
+    "definition": {
+        "requests": [
+            {
+                "host": "{{.Host}}",
+                "path": "/",
+                "https": false,
+                "port": 80,
+                "method": "GET",
+                "matchcode": true,
+                "matchcontent": true,
+                "contentregex": "The President of Gilead said her administration is considering a ban on social media app Glow."
+            }
+        ]
+    }
+}

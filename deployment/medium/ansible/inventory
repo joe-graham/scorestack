@@ -1,0 +1,45 @@
+[all]
+nginx ansible_host=172.17.20.10 ansible_ssh_common_args="-o StrictHostKeyChecking=no"
+logstash ansible_host=172.17.20.15
+kibana ansible_host=172.17.20.16
+
+[all:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/home/graham/.ssh/neccdc2021_jump
+bootstrap_password="uproar52skating10camera38"
+elastic_password="M#J8@f#LC26v9S!M2Kdf"
+kibana_password="Lkg7rFn38MG27K^ucthL"
+logstash_password="dVyq!!MwPe85a87VY3*t"
+remote_monitoring_user_password="YVF45*9Ga$&Gw8aN&jUS"
+fqdn=scoring.newscrier.org
+elasticsearch1_ip=172.17.20.11
+elasticsearch2_ip=172.17.20.12
+elasticsearch3_ip=172.17.20.13
+elasticsearch4_ip=172.17.20.14
+nginx_ip=172.17.20.10
+nginx_internal_ip=172.17.20.10
+logstash_ip=172.17.20.15
+kibana_ip=172.17.20.16
+dynamicbeat1_ip=172.17.20.17
+
+# All servers with elasticsearch installed
+[elasticsearch:children]
+master
+coordinating
+
+[elasticsearch:vars]
+ram_gb=6
+
+# Master-eligible data node elasticsearch servers
+[master]
+elasticsearch1 ansible_host=172.17.20.11
+elasticsearch2 ansible_host=172.17.20.12
+elasticsearch3 ansible_host=172.17.20.13
+
+# The coordinating-only elasticsearch server
+[coordinating]
+elasticsearch4 ansible_host=172.17.20.14 ram_gb=2
+
+# dynamicbeat hosts
+[dynamicbeat]
+dynamicbeat1 ansible_host=172.17.20.17
